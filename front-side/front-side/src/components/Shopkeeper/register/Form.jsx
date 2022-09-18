@@ -61,9 +61,6 @@ const Form = () => {
         console.log(response.data);
         if(response.data[0]=="connected")
         localStorage.setItem('shopowner',JSON.stringify(response.data[1]))
-        setTimeout(() => {
-          window.location.reload
-        }, 3000);
       });
   };
 
