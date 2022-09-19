@@ -6,9 +6,10 @@ const shopOwnerRouter = require("./router/shopOwnerRoute.js");
 const adminRouter = require("./router/adminRouter.js");
 const productRouter = require("./router/productRouter.js");
 const orderRouter = require("./router/orderRouter.js");
+const clientRouter = require("./router/clientRouter.js");
 const authAdminRout = require("./auth/admin/adminAuthRouter/router.js");
 const authShopOwnerRout = require("./auth/shopOwner/shopOwnerAuthRouter/router.js");
-
+const authClientRout = require("./auth/client/clientAuthRouter/router.js")
 const PORT = process.env.PORT || 3636;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,10 +21,12 @@ app.use(
 
 app.use("/auth/shopowner", authShopOwnerRout);
 app.use("/auth/admin", authAdminRout);
+app.use("/auth/client", authClientRout);
 app.use("/shopOwner", shopOwnerRouter);
 app.use("/product", productRouter);
 app.use("/admin", adminRouter);
 app.use("/order", orderRouter);
+app.use("client", clientRouter);
 
 app.get("/", (req, res) => {
   res.send("hello world");

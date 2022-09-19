@@ -5,10 +5,11 @@ import Informationdaffaire from "./Informationd'affaire";
 import Comptebancaire from "./Comptebancaire";
 import Summary from "./Summary";
 import axios from "axios";
-import IP from "../../api/ip.js";
+import IP from "../../ap  i/ip.js";
 import "../register/style.css";
 
-const Form = () => {
+const Form = ( ) => {
+  
   const [page, setPage] = useState(0);
 
   const [formData, setFormData] = useState({
@@ -78,7 +79,9 @@ const Form = () => {
 
   return (
     <>
-      <div>
+    
+      <div >
+        
         <a type="button" href="/sellercenter" className="button-user" id="log">
           SELLER CENTER
         </a>

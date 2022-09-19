@@ -6,16 +6,21 @@
     box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
 }
-.App{
-    height: 100%;
-    width: 100%;
-}
+
+
 
 :root{
+    height:50vh;
     --mainColor:#ffffff;
     --mainColorLight: #5767aa;
     --secondaryColor: #DB2B39;
     --textColor:#eee 
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
 }
 
 header{

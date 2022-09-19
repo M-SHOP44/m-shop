@@ -2,11 +2,10 @@ import {useRef} from "react";
 import {HiMenu} from "react-icons/hi";
 import {HiX} from "react-icons/hi";
 import { FcApproval} from "react-icons/fc";
-// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../layout/App.css'
 
 const Navbar = () => {
-// const navigate = useNavigate();
 
   const navRef = useRef();
 
@@ -17,9 +16,9 @@ const Navbar = () => {
     return (
       <>
         <header className="main-nav">
-            <a href="/home" id="myshop">My_shop</a>
+            <Link to="/" id="myshop">My_shop</Link>
             <div >
-              <FcApproval/><a  href="/signup" className="seller"  > Sell at m-shop</a>
+              <FcApproval/><Link  to={"/signup"} className="seller"  > Sell at m-shop</Link>
               </div>
             <nav ref={navRef}>
               <div className="buttons">
