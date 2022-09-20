@@ -14,21 +14,16 @@ import {CartProvider}  from "react-use-cart"
 const App = ()=>{
     return(  
     <CartProvider>
-        <Router>
-      <div>
+      <Router>
         <Header/>
-        <Routes>
+      <Routes>
         <Route path="/"  element={<Home/>}/>
         <Route  path="/signup"  element={<Form/>}   />
         <Route path="/login"  element={<LoginAdmin/>}  />
         <Route path="/sellercenter"  element={<Login/>}  />
-
-
-        </Routes>
+      </Routes>
         <Footer/>
-
-      </div>
-      </Router>
+          </Router>
       </CartProvider>
     )
 }

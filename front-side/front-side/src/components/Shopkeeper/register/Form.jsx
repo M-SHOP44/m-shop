@@ -5,7 +5,7 @@ import Informationdaffaire from "./Informationd'affaire";
 import Comptebancaire from "./Comptebancaire";
 import Summary from "./Summary";
 import axios from "axios";
-import IP from "../../ap  i/ip.js";
+import IP from "../../api/ip.js";
 import "../register/style.css";
 
 const Form = ( ) => {

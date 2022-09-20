@@ -40,7 +40,9 @@ useEffect(()=>{
       <div className='row'>
       {products.map((product,index) => {
         return (
-          <Itemcard  image={product.image} title={product.title} description={product.description} price={product.price} item={product} key={index} />
+          <Itemcard  image={product.image} title={product.title} 
+          description={product.description}
+           price={product.price} item={product} key={index} />
         )
       }
 
