@@ -5,7 +5,7 @@ import Informationdaffaire from "./Informationd'affaire";
 import Comptebancaire from "./Comptebancaire";
 import Summary from "./Summary";
 import axios from "axios";
-import IP from "../../ap  i/ip.js";
+import IP from "../../api/ip";
 import "../register/style.css";
 
 const Form = ( ) => {
@@ -60,8 +60,8 @@ const Form = ( ) => {
 
       .then((response) => {
         console.log(response.data);
-        if(response.data[0]=="connected")
-        localStorage.setItem('shopowner',JSON.stringify(response.data[1]))
+        // if(response.data[0]=="connected")
+        // localStorage.setItem('shopowner',JSON.stringify(response.data[1]))
       });
   };
 

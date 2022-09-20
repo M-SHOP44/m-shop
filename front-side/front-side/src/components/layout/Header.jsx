@@ -2,12 +2,17 @@ import {useRef} from "react";
 import {HiMenu} from "react-icons/hi";
 import {HiX} from "react-icons/hi";
 import { FcApproval} from "react-icons/fc";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import {useCart} from "react-use-cart";
+
+
 import { Link } from "react-router-dom";
 import '../layout/App.css'
 
 const Navbar = () => {
 
   const navRef = useRef();
+  const {totalUniqueItems} = useCart();
 
   const showNavBar = () => {
     navRef.current.classList.toggle("responsive_nav");
@@ -37,6 +42,10 @@ const Navbar = () => {
             <a href="/#">Luminaire</a>
             <a href="/#">Tapis</a>
             <a href="/#">Lit</a>
+            
+            <span href=""> <AiOutlineShoppingCart size={'25px'}/>({totalUniqueItems})</span>
+              
+
 
             <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <HiX/>

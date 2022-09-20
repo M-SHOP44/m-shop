@@ -40,7 +40,8 @@ useEffect(()=>{
       <div className='row'>
       {products.map((product,index) => {
         return (
-          <Itemcard  image={product.image} title={product.title} description={product.description} price={product.price} item={product} key={index} />
+          
+          <Itemcard  image={product.image} title={product.title} description={product.description} price={product.price} product={product} key={index} />
         )
       }
 
@@ -52,28 +53,7 @@ useEffect(()=>{
         <Cart />
       </div>
       
-      {/* <div className='side-basket-container'>
-        <div className='header-sidebar'>
-           <h2>basket</h2>
-        </div>
-        <div className='body-sidebar'>
-         <div className='cart-product'>
-           <div className='cart-image'>
-            <img src="" alt="" />
-            <h5>title</h5>
-           </div>
-           <div>
-            <button>+</button>
-            <button>-</button>
-           </div>
-
-         </div>
-        </div>
-        <div className='footer-sidebar'>
-          <h5>footer</h5>
-        </div>
-
-      </div> */}
+      
     
     </div>
   )
