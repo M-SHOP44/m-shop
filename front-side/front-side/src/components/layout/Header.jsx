@@ -8,8 +8,14 @@ import {useCart} from "react-use-cart";
 
 import { Link } from "react-router-dom";
 import '../layout/App.css'
+import SignIn from "../popup/SignIn";
+import SignUp from "../popup/SignUp";
+import { useState } from "react";
+
 
 const Navbar = () => {
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [buttonPopin, setButtonPopin] = useState(false);
 
   const navRef = useRef();
   const {totalUniqueItems} = useCart();
@@ -27,8 +33,12 @@ const Navbar = () => {
               </div>
             <nav ref={navRef}>
               <div className="buttons">
-                <div> <button type="button" className="button-user">Sign up</button></div>
-                <div><button type="button" className="button-user" id="log">Login</button></div>
+                <div> <button type="button" className="button-user" onClick={() => setButtonPopup(true)}>Sign up</button>
+                <SignUp trigger={buttonPopup} setTrigger={setButtonPopin}></SignUp>
+                </div>
+                <div><button type="button" className="button-user" id="log" onClick={() => setButtonPopin(true)}>Login</button>
+                <SignIn trigger={buttonPopin} setTrigger={setButtonPopin}></SignIn>
+                </div>
               </div>
             </nav>   
         </header>
