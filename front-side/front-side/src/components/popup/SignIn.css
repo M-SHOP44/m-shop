@@ -25,7 +25,8 @@
     border-radius: 15px;
     box-sizing: border-box;
     font-weight: 400;
-    right: 50rem;
+    right: 45rem;
+    z-index: 1;
 }
 @media screen and (max-width: 1600px) {
     .popupin {

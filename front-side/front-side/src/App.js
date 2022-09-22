@@ -16,13 +16,8 @@ const App = ()=>{
     <CartProvider>
       <Router>
         <Header/>
-<<<<<<< HEAD
-        <Routes>
-        <Route path="/"  element={<Home />}/>
-=======
       <Routes>
         <Route path="/"  element={<Home/>}/>
->>>>>>> 61b2b828c1bf04428988704fbcf8d4adacc1f01c
         <Route  path="/signup"  element={<Form/>}   />
         <Route path="/login"  element={<LoginAdmin/>}  />
         <Route path="/sellercenter"  element={<Login/>}  />

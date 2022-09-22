@@ -35,19 +35,13 @@ useEffect(()=>{
 
 
 
-  return (
+  return (  
     <div className='grid-container'>
       <div className='row'>
       {products.map((product,index) => {
         return (
-<<<<<<< HEAD
-          
-          <Itemcard  image={product.image} title={product.title} description={product.description} price={product.price} product={product} key={index} />
-=======
           <Itemcard  image={product.image} title={product.title} 
-          description={product.description}
-           price={product.price} item={product} key={index} />
->>>>>>> 61b2b828c1bf04428988704fbcf8d4adacc1f01c
+           price={product.price} product={product} key={index} />
         )
       }
 

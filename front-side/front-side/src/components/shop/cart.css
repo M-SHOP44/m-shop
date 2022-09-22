@@ -1,0 +1,76 @@
+
+
+.container {
+    padding-top: 1.5rem;
+}
+.image {
+    width: 120px;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.plus {
+    padding-left: 1px;
+    font-size: 20px;
+    font-weight: 600;
+    box-sizing: border-box;
+    background-color: white;
+    padding-left: 1rem;
+
+}
+
+.minus {
+    font-size: 20px;
+    font-weight: 600;   
+    box-sizing: border-box;
+    border-radius: 18px;
+    padding-right: 2rem;
+    background-color: white;
+}
+
+.space {
+    padding-left: 2rem;
+}
+ .spaceplus {
+    padding-right: 2rem;
+}
+
+.price {
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #383838;
+    font-weight: 600;
+}
+hr {
+    border-width: 2px;
+}
+.delivery{
+    font-size: 15px;
+    padding-left: 0rem;
+    padding-top: 1rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.clear {
+    font-size: 20px;
+    padding-left: 1rem;
+    background-color: #63C28D;
+    position: absolute;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    width: 400px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.empty {
+    padding-top: 3rem;
+}
+.td {
+    padding-top: 8rem;
+    padding-right: 2px;
+    width: 200px;
+}
+
+.card-container {
+    width: 90%;
+}

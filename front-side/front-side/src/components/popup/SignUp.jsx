@@ -23,6 +23,7 @@ function SignUp(props) {
       axios.post(`${IP}/auth/client/signup`, formData)
       .then((Response) => {
         console.log(Response.data)
+        
       })
     }
     
@@ -55,7 +56,7 @@ function SignUp(props) {
         </div>
 
         <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button>
-        { props.children } 
+        {/* { props.children }  */}
         </div>
     </div>
   ) :"";

@@ -5,6 +5,13 @@
      width: 100%;
    
  }
+ .form {
+  padding-left: 12rem;
+  display: flex;
+  position: relative;
+  margin-top: 1rem;
+ }
+
 
   .form-container{
     box-sizing: border-box;
@@ -15,7 +22,6 @@
     display: flex;
     flex-direction: column;
     width: 800px;
-    margin: 0px 0px 0px 100px;
   } 
   
 
@@ -42,11 +48,13 @@ input {
 }
 
 .comp{
-  font-size: 16px;
+  font-size: 18px;
   line-height: 28px;
-  padding: 8px 16px;
+  padding: 9px 16px;
   width: 100%;
   min-height: 44px;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
   border: unset;
   border-radius: 4px;
   outline-color: rgb(84 105 212 / 0.5);
@@ -80,4 +88,23 @@ input {
   padding: 10px 60px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/*Nom de la boutique*/
+.police {
+  font-size: 18px;
+}
+.police2 {
+  font-size: 18px;
+}
+.police3 {
+  font-size: 18px;
+  padding-top: 1rem;
+}
+.police4 {
+  font-size: 18px;
+}
+
+.option {
+  font-size: 19px;
 }
