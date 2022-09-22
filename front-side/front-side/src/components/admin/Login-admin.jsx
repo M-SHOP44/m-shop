@@ -2,12 +2,14 @@ import React,{useState} from 'react';
 import axios from 'axios';
 // import '../Login/style.css';
 import IP from '../api/ip';
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const Login= () => {
  
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
   username:"",
@@ -19,7 +21,13 @@ const Login= () => {
 const send = () => {
   axios.post(`${IP}/auth/admin/signin`, formData)
   .then(response => {
-    console.log(response);
+
+    if(response.data.token){
+      navigate("/DashboardAdmin");
+      console.log(response);
+
+    }
+
   })
 }
 

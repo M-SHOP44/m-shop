@@ -3,8 +3,9 @@ const OrderService = require("../service/orderServices.js");
 module.exports = {
   async postOrder(req, res, next) {
     try {
-      var Order = await OrderService.addToOrder(req.body);
-      res.send(Order);
+      console.log(req.body);
+      var o = await OrderService.addToOrder(req.body);
+      res.send(o);
     } catch (next) {
       res.status(401).json(next);
     }

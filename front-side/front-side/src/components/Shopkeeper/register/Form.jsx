@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { Steps } from "rsuite";
 import Comptevendeur from "./Comptevendeur";
+import Summary from "./Summary";
 import Informationdaffaire from "./Informationd'affaire";
 import Comptebancaire from "./Comptebancaire";
-import Summary from "./Summary";
 import axios from "axios";
-<<<<<<< HEAD
 import IP from "../../api/ip";
-=======
-import IP from "../../api/ip.js";
->>>>>>> 61b2b828c1bf04428988704fbcf8d4adacc1f01c
 import "../register/style.css";
 
 const Form = ( ) => {
@@ -54,18 +50,19 @@ const Form = ( ) => {
   const FormTitles = [
     "Comptevendeur",
     "Information d'affaire",
-    "Compte bancaire"
+    "Compte bancaire",
+    "Summary"
   ];
 
   const send = () => {
     console.log(formData)
     axios
-      .post(`${IP}/shopkeepers/register`, formData)
+      .post(`${IP}/auth/shopowner/signup`, formData)
 
       .then((response) => {
+        alert("you're registered")
         console.log(response.data);
-        // if(response.data[0]=="connected")
-        // localStorage.setItem('shopowner',JSON.stringify(response.data[1]))
+        
       });
   };
 
@@ -78,6 +75,9 @@ const Form = ( ) => {
       );
     } else if (page === 2) {
       return <Comptebancaire formData={formData} setFormData={setFormData} />;
+    } else {
+      return <Summary formData={formData} setFormData={setFormData} />;
+
     }
   };
 
@@ -106,7 +106,7 @@ const Form = ( ) => {
           </div>
           <div className="body">{PageDisplay()}</div>
           <hr />
-          <div className="footer">
+          <div >
             <button
               id="button-back"
               disabled={page === 0}

@@ -1,9 +1,15 @@
 import React from 'react';
 import {useCart} from "react-use-cart";
+import { useNavigate } from "react-router-dom";
 
-const Cart = () => {
+
+const Cart = (props) => {
+  const navigate = useNavigate();
   const {isEmpty,items,cartTotal, updateItemQuantity, removeItem, emptyCart} = useCart();
 
+  const send = () =>{
+     props.setProducts(items)
+  }
   if (isEmpty) return <h1>Your Card is empty</h1>
   return (
     <section>
@@ -39,6 +45,11 @@ const Cart = () => {
           <div>
             <button onClick={() => emptyCart  ()}>
               clear cart
+            </button>
+          </div>
+          <div>
+            <button  onClick={() => navigate("/checkout")} >
+              checkout
             </button>
           </div>
         </div>

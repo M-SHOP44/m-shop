@@ -4,8 +4,7 @@ import {HiX} from "react-icons/hi";
 import { FcApproval} from "react-icons/fc";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import {useCart} from "react-use-cart";
-
-
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import '../layout/App.css'
 import SignIn from "../popup/SignIn";
@@ -16,7 +15,7 @@ import { useState } from "react";
 const Navbar = () => {
   const [buttonPopup, setButtonPopup] = useState(false);
   const [buttonPopin, setButtonPopin] = useState(false);
-
+  const navigate = useNavigate();
   const navRef = useRef();
   const {totalUniqueItems} = useCart();
 
@@ -53,7 +52,9 @@ const Navbar = () => {
             <a href="/#">Tapis</a>
             <a href="/#">Lit</a>
             
+            <button onClick={() => navigate("/basket")} >
             <span href=""> <AiOutlineShoppingCart size={'25px'}/>({totalUniqueItems})</span>
+            </button>
               
 
 

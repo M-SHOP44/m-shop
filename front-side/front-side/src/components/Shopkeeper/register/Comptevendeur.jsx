@@ -5,20 +5,6 @@ import './/style.css'
 
 const Comptevendeur =  ({formData, setFormData}) => {
 
-
-// const [nomDeLaBoutique, setNomDeLaBoutique] = useState(null);
-// const [option, setOption] = useState(null);
-// const [nomEtPrenomDeGestionnaire, setNomEtPrenomDeGestionnaire] = useState(null);
-// const [numeroDeTelephone, setNumeroDeTelephone] = useState(null);
-// const [adresseEmail, setAdresseEmail] = useState(null);
-// const [confirmeEmail, setConfirmeEmail] = useState(null);
-// const [password, setPassword] = useState(null);
-// const [confirmePassword, setConfirmePassword] = useState(null);
-
-
-
-
-
 return(
         <>
    
@@ -77,7 +63,7 @@ return(
     </div>
     <div>
       <label htmlFor="password">Mot de passe *</label>
-      <input id="password" type="text"  value={formData.password}
+      <input id="password" type="password"  value={formData.password}
        onChange={(event) => {
         setFormData({...formData, password:event.target.value});
       }}
@@ -85,7 +71,7 @@ return(
     </div>
     <div>
       <label htmlFor="confirmePassword">Retaper le mot de passe *</label>
-      <input id="confirmePassword" type="text" value={formData.confirmePassword}
+      <input id="confirmePassword" type="password" value={formData.confirmePassword}
        onChange={(event) => {
         setFormData({...formData, confirmePassword:event.target.value});
       }} 

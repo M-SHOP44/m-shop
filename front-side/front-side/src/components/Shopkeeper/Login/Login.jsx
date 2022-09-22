@@ -1,27 +1,28 @@
-import React,{useState,useEffect,useRef,useContext} from 'react';
+import React,{useState} from 'react';
 import axios from 'axios';
 import '../Login/style.css';
 import IP from '../../api/ip';
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const Login= () => {
- 
-  const shopownerRef = useRef();
-  const errRef = useRef();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
   email:"",
   password:"" 
   });
-  const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
+  
 
 
 const send = () => {
-  axios.post(`${IP}/shopkeepers/login`, formData)
+  axios.post(`${IP}/auth/shopowner/signin`, formData)
   .then(response => {
+    if(response.data.token){
+      navigate("/DashboardShopowner");
     console.log(response);
+    }
   })
 }
 

@@ -1,1 +1,1 @@
-module.exports ='http://localhost:3636';
+module.exports ='https://m-shop12.herokuapp.com';
