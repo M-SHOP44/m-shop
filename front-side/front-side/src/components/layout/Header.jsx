@@ -1,78 +1,122 @@
-import {useRef} from "react";
-import {HiMenu} from "react-icons/hi";
-import {HiX} from "react-icons/hi";
-import { FcApproval} from "react-icons/fc";
+import { useRef } from "react";
+import { HiMenu } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
+import { FcApproval } from "react-icons/fc";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import {useCart} from "react-use-cart";
+import { useCart } from "react-use-cart";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import '../layout/App.css'
-import SignIn from "../popup/SignIn";
-import SignUp from "../popup/SignUp";
-import { useState } from "react";
-
+import "../layout/App.css";
+import SignIn from "../popup/Signin/SignIn";
+import SignUp from "../popup/Singup/SignUp";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const [logged, setLogged] = useState(false);
+  const [client, setClient] = useState(null);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [buttonPopin, setButtonPopin] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const navRef = useRef();
-  const {totalUniqueItems} = useCart();
+  const { totalUniqueItems } = useCart();
 
   const showNavBar = () => {
     navRef.current.classList.toggle("responsive_nav");
-  }
-
-    return (
-      <>
-        <header className="main-nav">
-            <Link to="/" id="myshop">My_shop</Link>
-            <div >
-              <FcApproval/><Link  to={"/signup"} className="seller"  > Sell at m-shop</Link>
-              </div>
-            <nav ref={navRef}>
-              <div className="buttons">
-                <div> <button type="button" className="button-user" onClick={() => setButtonPopup(true)}>Sign up</button>
-                <SignUp trigger={buttonPopup} setTrigger={setButtonPopin}></SignUp>
-                </div>
-                <div><button type="button" className="button-user" id="log" onClick={() => setButtonPopin(true)}>Login</button>
-                <SignIn trigger={buttonPopin} setTrigger={setButtonPopin}></SignIn>
-                </div>
-              </div>
-            </nav>   
-        </header>
-        <header className="category-nav">
-             <nav ref={navRef}>
-            <a href="/#">canapé</a>
-            <a href="/#">Chair</a>
-            <a href="/#">Table</a>
-            <a href="/#">Bureau</a>
-            <a href="/#">Rangement</a>
-            <a href="/#">Luminaire</a>
-            <a href="/#">Tapis</a>
-            <a href="/#">Lit</a>
-            
-            <button onClick={() => navigate("/basket")} >
-            <span href=""> <AiOutlineShoppingCart size={'25px'}/>({totalUniqueItems})</span>
-            </button>
-              
-
-
-            <button className="nav-btn nav-close-btn" onClick={showNavBar}>
-            <HiX/>
-            </button>
-            </nav>
-            
-            <button onClick={showNavBar} className="nav-btn">
-            <HiMenu/>
-            </button>   
-            
-        </header>
-        </>
-
-
-    )
   };
-  
-  export default Navbar;
-  
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("client"))
+    console.log(user);
+    if(user){
+      setClient(user)
+      setLogged(true)
+      console.log(user);
+    }
+  },[]);
+  return (
+    <>
+      <header className="main-nav">
+        <Link to="/" id="myshop">
+          M-shop
+        </Link>
+        <div>
+          <FcApproval />
+          <Link
+            style={{ textDecoration: "none" }}
+            to="/signup"
+            className="seller"
+          >
+            {" "}
+            Sell at m-shop
+          </Link>
+        </div>
+        <nav ref={navRef}>
+          {logged ? 
+          <div className="logout-container">
+            <h1 className="username">{client.username}</h1> 
+            <button   className="button-user" onClick={()=> {localStorage.removeItem("client");setClient(null); setLogged(false)}}>log out</button>
+            </div> : 
+            <div className="buttons">
+            <div> 
+              <button
+                type="button"
+                className="button-user"
+                onClick={() => setButtonPopup(true)}
+              >
+                Sign up
+              </button>
+              <SignUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+                {" "}
+              </SignUp>
+            </div>
+            <div>
+              <button
+                type="button"
+                className="button-user"
+                id="log"
+                onClick={() => setButtonPopin(true)}
+              >
+                Login
+              </button>
+              <SignIn trigger={buttonPopin} setTrigger={setButtonPopin}>
+                {" "}
+              </SignIn>
+            </div>
+          </div>
+}
+        </nav>
+      </header>
+      <header className="category-nav">
+        <nav ref={navRef}>
+          <a href="/#">canapé</a>
+          <a href="/#">Chair</a>
+          <a href="/#">Table</a>
+          <a href="/#">Bureau</a>
+          <a href="/#">Rangement</a>
+          <a href="/#">Luminaire</a>
+          <a href="/#">Tapis</a>
+          <a href="/#">Lit</a>
+
+          {/* onClick={
+              () =>
+               navigate("/basket")}  */}
+
+          <a href="" id="basket">
+            {" "}
+            <AiOutlineShoppingCart size={"25px"} />({totalUniqueItems})
+          </a>
+
+          <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+            <HiX />
+          </button>
+        </nav>
+
+        <button onClick={showNavBar} className="nav-btn">
+          <HiMenu />
+        </button>
+      </header>
+    </>
+  );
+};
+
+export default Navbar;

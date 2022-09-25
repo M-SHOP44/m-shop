@@ -1,9 +1,10 @@
-import React,{useState} from 'react'
-import Header from '../layout/Header'
-import Footer from '../layout/Footer'
-import './checkout.css'
-// import axios from 'axios'
-// import IP from '../api/ip'
+import React,{useState} from 'react';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import './checkout.css';
+import axios from 'axios';
+import IP from '../api/ip';
+
 const Checkout = () => {
 
 const [formData, setFormData] = useState({
@@ -17,15 +18,16 @@ const [formData, setFormData] = useState({
     email:"",
 });
 
-// const send = () =>{
+const send = () =>{
 
-//     // var order = formData
-// //    order.products = JSON.parse(localStorage.getItem("react-use-cart"))
-//     // axios.post(`${IP}/order/create`, order)
-//     // .then(response => {
-//     //     console.log(response);
-//     // })
-// }
+    var order = formData
+   order.products = JSON.parse(localStorage.getItem("react-use-cart"))
+    axios.post(`${IP}/order/create`, order)
+    .then(response => {
+        console.log(response);
+        alert('order succesfll')
+    })
+}
 
   return (
     <div>
@@ -37,9 +39,9 @@ const [formData, setFormData] = useState({
         <section>
             <h3>Checkout</h3>
             <div id='container'>
-                <form className="row g-3" >
-                    <div>
-                    <h3 id='title'>Delivery adresse </h3>
+               
+                    <div id='title'>
+                    <h3 >Delivery adresse </h3>
                     </div>
                     <div className='form'>
 
@@ -68,7 +70,6 @@ const [formData, setFormData] = useState({
                             <div>160/160</div>
                         </div>
                     </div>
-                </form>
                 <hr />
                 <form  >
                     <h3>Personal Details</h3>
@@ -92,7 +93,7 @@ const [formData, setFormData] = useState({
             </div>
         </section>
         <div>
-        <button  type="button" className="btn btn-primary" id='send' >order & pay with cash </button>
+        <button  type="button" className="btn btn-primary" id='send' onClick={send} >order & pay with cash </button>
         </div>
     </section>
         </div>
