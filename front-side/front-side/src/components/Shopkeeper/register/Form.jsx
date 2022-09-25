@@ -102,7 +102,7 @@ const Form = ( ) => {
           </div>
           <div className="body">{PageDisplay()}</div>
           <hr />
-          <div className="footer">
+          <div className="footer-btn">
             <button
               id="button-back"
               disabled={page === 0}

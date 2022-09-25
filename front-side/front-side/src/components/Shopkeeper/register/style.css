@@ -57,7 +57,7 @@ input {
   margin-top: 1rem;
   border: unset;
   border-radius: 4px;
-  outline-color: rgb(84 105 212 / 0.5);
+  outline-color: rgba(0, 143, 83, 0.697);
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
               rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
@@ -67,23 +67,24 @@ input {
               rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
               rgba(0, 0, 0, 0) 0px 0px 0px 0px;
 }
-.footer{
+/* .footer{
   display: flex;
-}
+} */
 #button-next{
   
-  background-color: rgb(111, 173, 180);
+  background-color: rgba(0, 143, 83, 0.697);
   color: white;
   font-size: 20px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding: 10px 60px;
   border-radius: 5px;
   cursor: pointer;
   margin-left: 400px;
 }
 #button-back{
-  
-  background-color: rgb(111, 173, 180);
+  background-color: rgba(0, 143, 83, 0.697);
   color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 20px;
   padding: 10px 60px;
   border-radius: 5px;
@@ -107,4 +108,39 @@ input {
 
 .option {
   font-size: 19px;
+}
+
+.footer-btn {
+  padding-left: 1rem;
+}
+
+/* Step1 */
+
+ .step {
+  font-size: 19px;
+} 
+.step1{
+  font-size: 18px;
+  padding-top: 1rem;
+}
+
+.step2{
+  font-size: 18px;
+}
+
+.step8 {
+  padding-top: 1rem;
+  width: 760px;
+}
+.step8-1 {
+  width: max-content;
+}
+.step11{
+  padding-top: 1rem;
+}
+.step12{
+  padding-top: 1rem;
+}
+.step14{
+  padding-top: 1rem;
 }
