@@ -5,20 +5,6 @@ import './/style.css'
 
 const Comptevendeur =  ({formData, setFormData}) => {
 
-
-// const [nomDeLaBoutique, setNomDeLaBoutique] = useState(null);
-// const [option, setOption] = useState(null);
-// const [nomEtPrenomDeGestionnaire, setNomEtPrenomDeGestionnaire] = useState(null);
-// const [numeroDeTelephone, setNumeroDeTelephone] = useState(null);
-// const [adresseEmail, setAdresseEmail] = useState(null);
-// const [confirmeEmail, setConfirmeEmail] = useState(null);
-// const [password, setPassword] = useState(null);
-// const [confirmePassword, setConfirmePassword] = useState(null);
-
-
-
-
-
 return(
         <>
    

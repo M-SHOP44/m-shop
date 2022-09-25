@@ -4,6 +4,12 @@ mongoose.Promise = global.Promise;
 
 const OrderSchema = new mongoose.Schema(
   {
+    streetname: {type:String},
+    housename: {type:String},
+    postcode: {type:Number},
+    city: {type:String},
+    note: {type:String},
+    username: {type:String},
     num: { type: String },
     email: { type: String },
     products: [

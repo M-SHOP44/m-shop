@@ -4,6 +4,8 @@ import Itemcard from '../../shop/Itemcard.jsx';
 import Cart from '../../shop/Cart.jsx';
 import IP from '../../api/ip.js';
 import './style.css';
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer.jsx';
 
 
 
@@ -35,18 +37,22 @@ useEffect(()=>{
 
 
 
-  return (  
+  return (
+    <div>
+     <div>
+      <Header/>
+     </div>
+    
     <div className='grid-container'>
       <div className='row'>
       {products.map((product,index) => {
         return (
-          <Itemcard  image={product.image} title={product.title} 
-           price={product.price} product={product} key={index} />
+          
+          <Itemcard  image={product.image} title={product.title}  price={product.price} product={product} key={index} />
         )
       }
 
-      
-        
+
         )}
       </div>
       <div>
@@ -55,6 +61,10 @@ useEffect(()=>{
       
       
     
+    </div>
+    <div>
+      <Footer/>
+     </div>
     </div>
   )
 

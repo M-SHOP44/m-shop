@@ -1,11 +1,24 @@
 import React from 'react';
 import {useCart} from "react-use-cart"; 
 import './cart.css'
+import   empty from  "../../images/empty.svg";
+import { useNavigate } from "react-router-dom";
 
-const Cart = () => {
+
+const Cart = (props) => {
+  const navigate = useNavigate();
   const {isEmpty,items,cartTotal, updateItemQuantity, removeItem, emptyCart} = useCart();
 
-  if (isEmpty) return <h3 className='empty'>Your Card is empty</h3>
+  const send = () =>{
+    console.log(send);
+     
+     navigate("/checkout")
+     props.setProducts(items)
+  }
+  if (isEmpty) return  <div className='fakecart'  > 
+    <img className='emptyimg' src={empty} alt="" />
+    <h1 >Your Card is empty</h1> 
+    </div>
   return (
     <section>
       <div className='container'>
@@ -47,11 +60,22 @@ const Cart = () => {
           <div>
             <h5 className='delivery'>*Delivery cost: 5 TND*</h5>
           </div>
-          <div>
+          <div className='button-container'>
+          <div >
             <button className='clear' onClick={() => emptyCart  ()}>
               clear cart
             </button>
           </div>
+          <div>
+            <button
+            className='clear'
+              onClick={send}
+               >
+              checkout
+            </button>
+          </div>
+          </div>
+        
         </div>
       </div>
     </section>

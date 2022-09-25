@@ -151,6 +151,11 @@ header .nav-btn{
     color: #3CB371;
 
 }
+#basket{
+ position:absolute;
+ right: 0;
+ margin-top: 12px;
+}
 
 
 /* FOOTER */
@@ -264,7 +269,14 @@ ul{
     position: relative;
     left: 28rem;
 }
-
+.logout-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.username{
+    font-size: 30px;
+    padding: 0 15px;
+}
 /* responsive-footer */
 
 @media(max-width:767px) {

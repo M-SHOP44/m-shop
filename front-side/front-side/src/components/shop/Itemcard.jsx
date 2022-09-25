@@ -1,6 +1,6 @@
 import React from 'react'
 import {useCart} from "react-use-cart";
-
+import "./cart.css"
 const Itemcard = (props) => {
   props.product.id=props.product._id
     const {addItem} = useCart();
@@ -14,7 +14,7 @@ const Itemcard = (props) => {
                 <h5 className='card-title'>{props.title}</h5>
                 <h5 className='card-title'>{props.price}</h5>
                 <p className='card-text'>{props.description}</p>
-                <button className='btnbtn-success' onClick={() => addItem(props.product)}>Add to Cart</button>
+                <button className='btn-success' onClick={() => addItem(props.product)}>Add to Cart</button>
             </div>
         </div>
     </div>
