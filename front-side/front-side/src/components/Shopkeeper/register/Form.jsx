@@ -7,8 +7,14 @@ import Comptebancaire from "./Comptebancaire";
 import axios from "axios";
 import IP from "../../api/ip";
 import "../register/style.css";
+import Lottie from "react-lottie";
+import  shop  from "../../../images/lottie/shop.json"
+// import Popup from "./popup";
+// import { useState } from "react";
+
 
 const Form = ( ) => {
+  
   
   const [page, setPage] = useState(0);
 
@@ -47,6 +53,15 @@ const Form = ( ) => {
     codeSwift: "",
   });
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: shop,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
+
   const FormTitles = [
     "Comptevendeur",
     "Information d'affaire",
@@ -65,7 +80,7 @@ const Form = ( ) => {
         
       });
   };
-
+  
   const PageDisplay = () => {
     if (page === 0) {
       return <Comptevendeur formData={formData} setFormData={setFormData} />;
@@ -80,20 +95,20 @@ const Form = ( ) => {
 
     }
   };
-
+ 
   return (
     <>
     
-      <div >
+      <div className="flex">
         
-        <a type="button" href="/sellercenter" className="button-user" id="log">
+        <a type="button" href="/sellercenter" className="log" >
           SELLER CENTER
         </a>
       </div>
       <hr />
-      <div className="form">
-        <div className="form-container">
-          <div className="header">
+      <div id="form">
+        <div id="form-container">
+          <div id="header">
             <div>
               <Steps current={page} id="steps">
                 <Steps.Item title="Votre compte vendeur" />
@@ -106,7 +121,7 @@ const Form = ( ) => {
           </div>
           <div className="body">{PageDisplay()}</div>
           <hr />
-          <div >
+          <footer id="footer">
             <button
               id="button-back"
               disabled={page === 0}
@@ -126,16 +141,27 @@ const Form = ( ) => {
             >
               Next
             </button>
+            
             <button
-              id="button-next"
+              id="button-submit"
               hidden={page === 0 || page === 1 || page === 2}
               onClick={send}
             >
               submit
             </button>
-          </div>
+            
+          </footer>
         </div>
+        <div id='icon'>
+        <Lottie 
+	    options={defaultOptions}
+        height={600}
+        width={600}
+        
+      /> 
       </div>
+      </div>
+     
     </>
   );
 };

@@ -7,37 +7,37 @@ const Comptebancaire = ({formData, setFormData})=>{
 
   return (
    <>
-    <div>
-      <label htmlFor="Titulaire du compte">Titulaire du compte</label>
-      <input id="Titulaire du compte" type="text" value={formData.titulaireDuCompte}
+    <div className='police'>
+      <label htmlFor="Titulaire du compte">Account owner</label>
+      <input id="input" type="text" value={formData.titulaireDuCompte} className="comp" placeholder='Enter your response'
        onChange={(event) => {
         setFormData({...formData, titulaireDuCompte: event.target.value});
       }}/>
     </div>
-    <div>
-      <label htmlFor="Nom de la banque">Nom de la banque</label>
-      <input id="Nom de la banque" type="text" value={formData.nomDeLaBanque}
+    <div className='police'>
+      <label htmlFor="Nom de la banque">Name of the bank</label>
+      <input id="input" type="text" value={formData.nomDeLaBanque} className="comp" placeholder='Enter your response'
        onChange={(event) => {
         setFormData({...formData, nomDeLaBanque:event.target.value});
       }}/>
     </div>
-    <div>
-      <label htmlFor="Code bancaire">Code bancaire</label>
-      <input id="Code bancaire" type="text" value={formData.codeBancaire}
+    <div className='police'>
+      <label htmlFor="Code bancaire">Bank code</label>
+      <input id="input" type="text" value={formData.codeBancaire} className="comp" placeholder='Enter your response'
        onChange={(event) => {
         setFormData({...formData, codeBancaire:event.target.value});
       }}/>
     </div>
-    <div>
-      <label htmlFor="Code IBAN - IBAN">Code IBAN - IBAN</label>
-      <input id="Code IBAN - IBAN" type="text" value={formData.codeIban}
+    <div className='police'>
+      <label htmlFor="Code IBAN - IBAN">IBAN Code </label>
+      <input id="input" type="text" value={formData.codeIban} className="comp" placeholder='Enter your response'
        onChange={(event) => {
         setFormData({...formData, codeIban: event.target.value});
       }}/>
     </div>
-    <div>
-      <label htmlFor="Code Swift">Code Swift</label>
-      <input id="Code Swift" type="text" value={formData.codeSwift}
+    <div className='police'>
+      <label htmlFor="Code Swift">SWIFT Code</label>
+      <input id="input" type="text" value={formData.codeSwift} className="comp" placeholder='Enter your response'
        onChange={(event) => {
         setFormData({...formData, codeSwift:event.target.value});
       }}/>

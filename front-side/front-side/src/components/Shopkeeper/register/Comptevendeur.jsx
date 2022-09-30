@@ -1,5 +1,5 @@
 import React from "react";
-import './/style.css'
+import './style.css'
 
 
 
@@ -8,38 +8,40 @@ const Comptevendeur =  ({formData, setFormData}) => {
 return(
         <>
    
-         
+  <div className="elements"> 
+    <div id="column">    
     <div className="police" >
-      <label htmlFor="Nom de la boutique">Shop name <span style={{color: "red"}}>*</span></label>
-      <input placeholder="shop name" id="Nom de la boutique" value={formData.nameDeLaBoutique}
+      <label htmlFor="Nom de la boutique">The Shop name <span style={{color: "red"}}>*</span></label>
+      <input placeholder="Enter shop name" id="input" value={formData.nameDeLaBoutique} className="comp"
         onChange={(event) => {
         console.log({...formData});
         setFormData({ ...formData, nameDeLaBoutique : event.target.value})}} />
-        </div>
-    <div className="police2">
-      <label  htmlFor="comp">Veuillez sélectionner si vous êtes une personne physique ou une entreprise <span style={{color: "red"}}>*</span></label>
-      <select className="comp" value={formData.persone}
+    </div>
+
+    <div className="police">
+      <label   htmlFor="comp">Please select if you are a person or a company <span style={{color: "red"}}>*</span></label>
+      <select  id="input" className="comp" value={formData.persone}
       onChange={(event) => {
         console.log(event.target.value);
         setFormData({...formData, persone:event.target.value});
       }}
        >
-        <option className="option" value="choisir une option">- Choisir une option -</option>
-        <option value="Personne physique">Personne physique</option>
-        <option value="Entité commercial/ Entreprise">Entité commercial/ Entreprise</option>
+        <option className="option" value="choisir une option">-Choose an option-</option>
+        <option value="Personne physique">Physical person</option>
+        <option value="Entité commercial/ Entreprise">Business Entity/ Company</option>
       </select>
     </div>
-    <div className="police3">
-      <label  htmlFor="Nom et prénom du gestionnaire de compte">Full name <span style={{color: "red"}}>*</span></label>
-      <input placeholder="Enter your full name" id="Nom et prénom du gestionnaire de compte" value={formData.nomEtPrénomDuGestionnaireDeCompte}
+    <div className="police">
+      <label   htmlFor="Nom et prénom du gestionnaire de compte">Full name <span style={{color: "red"}}>*</span></label>
+      <input  id="input"  placeholder="Enter your full name"  value={formData.nomEtPrénomDuGestionnaireDeCompte} className="comp"
        onChange={(event) => {
         setFormData({...formData, nomEtPrénomDuGestionnaireDeCompte: event.target.value});
       }} 
       />
     </div>
-    <div className="police4">
+    <div className="police">
       <label htmlFor="Numéro de téléphone du gestionnaire de compte ">Enter Your Phone Number <span style={{color: "red"}}>*</span></label>
-      <input placeholder="Phone Number" id="Numéro de téléphone du gestionnaire de compte " type="numero" value={formData.numeroDeTelephone}
+      <input placeholder="Phone Number" id="input" type="numero" value={formData.numeroDeTelephone} className="comp" 
        onChange={(event) => {
         setFormData({...formData, numeroDeTelephone:event.target.value});
       }}
@@ -47,7 +49,7 @@ return(
     </div>
     <div className="police">
       <label htmlFor="Adresse e-mail ">New email <span style={{color: "red"}}>*</span></label>
-      <input placeholder="new email" id="Adresse e-mail " type="text" value={formData.email}
+      <input placeholder="new email" id="input" type="text" value={formData.email} className="comp"
        onChange={(event) => {
         setFormData({...formData, email: event.target.value});
       }}
@@ -55,7 +57,7 @@ return(
     </div>
     <div className="police">
       <label htmlFor="confirmeEmail">Confirm new email <span style={{color: "red"}}>*</span></label>
-      <input placeholder="confirm new email" id="confirmeEmail" type="text" value={formData.confirmeEmail}
+      <input placeholder="confirm new email" id="input" type="text" value={formData.confirmeEmail} className="comp"
        onChange={(event) => {
         setFormData({...formData, confirmeEmail:event.target.value});
       }}
@@ -63,7 +65,7 @@ return(
     </div>
     <div className="police">
       <label htmlFor="password">Enter Password <span style={{color: "red"}}>*</span></label>
-      <input placeholder="enter Password" id="password" type="text"  value={formData.password}
+      <input placeholder="enter Password" id="input" type="text"  value={formData.password} className="comp"
        onChange={(event) => {
         setFormData({...formData, password:event.target.value});
       }}
@@ -71,12 +73,14 @@ return(
     </div>
     <div className="police">
       <label htmlFor="confirmePassword">Reenter Password <span style={{color: "red"}}>*</span></label>
-      <input placeholder="Reenter Password" id="confirmePassword" type="text" value={formData.confirmePassword}
+      <input placeholder="Reenter Password" id="input" type="text" value={formData.confirmePassword} className="comp"
        onChange={(event) => {
         setFormData({...formData, confirmePassword:event.target.value});
       }} 
       />
     </div>
+  </div>
+</div> 
     
     </>
     )
