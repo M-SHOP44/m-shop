@@ -2,18 +2,18 @@ import { useRef } from "react";
 import { HiMenu } from "react-icons/hi";
 import { HiX } from "react-icons/hi";
 import { FcApproval } from "react-icons/fc";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useCart } from "react-use-cart";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../layout/App.css";
 import SignIn from "../popup/Signin/SignIn";
 import SignUp from "../popup/Singup/SignUp";
 import { useState, useEffect } from "react";
-
+import Cart from '.././shop/Cart'
 const Navbar = () => {
   const [logged, setLogged] = useState(false);
   const [client, setClient] = useState(null);
+  const [show, setShow] = useState(false)
   const [buttonPopup, setButtonPopup] = useState(false);
   const [buttonPopin, setButtonPopin] = useState(false);
   // const navigate = useNavigate();
@@ -33,6 +33,9 @@ const Navbar = () => {
       console.log(user);
     }
   },[]);
+
+ 
+  
   return (
     <>
       <header className="main-nav">
@@ -46,7 +49,7 @@ const Navbar = () => {
             to="/signup"
             className="seller"
           >
-            {" "}
+
             Sell at m-shop
           </Link>
         </div>
@@ -88,6 +91,7 @@ const Navbar = () => {
       </header>
       <header className="category-nav">
         <nav ref={navRef}>
+          <div className="category">
           <a href="/#">canapé</a>
           <a href="/#">Chair</a>
           <a href="/#">Table</a>
@@ -96,22 +100,25 @@ const Navbar = () => {
           <a href="/#">Luminaire</a>
           <a href="/#">Tapis</a>
           <a href="/#">Lit</a>
+          </div>
+         
 
           {/* onClick={
               () =>
                navigate("/basket")}  */}
-
-          <a href="" id="basket">
-            {" "}
-            <AiOutlineShoppingCart size={"25px"} />({totalUniqueItems})
-          </a>
+        
 
           <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <HiX />
           </button>
         </nav>
-
-        <button onClick={showNavBar} className="nav-btn">
+        <div className="basket">
+          <span class="material-symbols-outlined" onClick={()=> setShow(true)}>shopping_cart 
+          <h4>({totalUniqueItems})</h4>
+          </span>
+          {show ? <Cart/> :null}
+          </div>
+         <button onClick={showNavBar} className="nav-btn">
           <HiMenu />
         </button>
       </header>

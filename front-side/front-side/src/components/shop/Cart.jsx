@@ -22,8 +22,8 @@ const Cart = (props) => {
   return (
     <section>
       <div className='container'>
-        <div>
-          <div>
+        
+          <div className='shopping'>
             <table>
               <tbody>
               {items.map((product,index)=>{
@@ -77,7 +77,7 @@ const Cart = (props) => {
           </div>
         
         </div>
-      </div>
+      
     </section>
   )
 }

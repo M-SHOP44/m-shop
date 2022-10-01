@@ -1,5 +1,5 @@
 
-.form-container{
+.login-container{
     box-sizing: border-box;
     padding: 1rem;
     border-radius: 1rem;
@@ -7,42 +7,45 @@
     border: 4px solid hsl(0, 0%, 90%);
     display: flex;
     flex-direction: column;
-    width: 800px;
-    margin: 150px 0px 100px 300px;
+    width:80%;
+    margin: 0 auto;
+    margin-top: 10rem;
   } 
-  label {
-    margin-bottom: 10px;
-    font-size:larger;
-    margin: 10px;
-}
-input {
-  font-size: 16px;
-  line-height: 28px;
-  padding: 8px 16px;
-  width: 100%;
-  min-height: 44px;
-  border: unset;
-  border-radius: 4px;
-  outline-color: rgb(84 105 212 / 0.5);
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-              rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
-              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-              rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
-              rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-  margin: 10px;
-}
+  .form-cont{
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .input-login{
+    height: 20%;
+    width: 99%;
+    
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  }
+ label {
+    font-size: 20px;
+    margin-left: 15px;
+    
+} 
+
 #connecter{
     background-color: rgb(111, 173, 180);
     color: white;
-    font-size: 20px;
-    padding: 10px 60px;
+    font-size: 15px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 500px;
+    margin-left: 73rem;
 }
 #forget-password{
-    margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 17px;
 }

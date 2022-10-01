@@ -1,0 +1,64 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 14px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'poppins', sans-serif;
+    font-size: 0.88rem;
+    background: #f6f6f9;
+    user-select: none;
+    overflow-x: hidden;
+   
+}
+.container-shopowner{
+  
+    display: grid;
+    width: 100%;
+   justify-content: center;
+    gap: 1.8rem;
+   
+}
+
+
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    border-bottom: solid ;
+    border-color: rgb(156, 155, 155);
+    margin-top: 10rem;
+}
+
+select{
+    position: relative;
+    height: 30px;
+    border-radius: 2px;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit; */
+    /* background-color: red; */
+/* }
+.select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+} */

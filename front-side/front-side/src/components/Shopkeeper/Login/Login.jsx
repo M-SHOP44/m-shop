@@ -29,10 +29,15 @@ const send = () => {
 
   return (
     <>
-    <div className='form-container'>
-       <div>
+    <div className='login-container'>
+      <div className='form-cont'>
+      <div>
       <label htmlFor="email">Email</label>
-      <input type="email" placeholder='Email' value={formData.email}
+      <input       
+      className='input-login'
+       type="email" 
+       placeholder='Email' 
+       value={formData.email}
       onChange={(event)=>{
         setFormData({...formData, email: event.target.value})
       }} />
@@ -40,6 +45,7 @@ const send = () => {
     <div>
       <label htmlFor="password">Password</label>
       <input 
+      className='input-login'
       type="password" 
       placeholder='Password'
       value={formData.password}
@@ -48,6 +54,8 @@ const send = () => {
       }}
       />
     </div>
+      </div>
+     
     <div id='forget-password'>
       <a href="#/">Forget Password?</a>
     </div>
