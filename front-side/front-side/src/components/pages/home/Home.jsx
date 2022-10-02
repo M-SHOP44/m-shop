@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Itemcard from "../../shop/Itemcard.jsx";
-// import Cart from "../../shop/Cart.jsx";
+import Cart from "../../shop/Cart.jsx";
 import IP from "../../api/ip.js";
 import "./style.css";
 import Header from "../../layout/Header";
@@ -41,9 +41,9 @@ const Home = () => {
             );
           })}
         </div>
-        {/* <div>
+        <div>
           <Cart />
-        </div> */}
+        </div>
       </div>
       <div>
         <Footer />

@@ -113,7 +113,7 @@ const Navbar = () => {
           </button>
         </nav>
         <div className="basket">
-          <span class="material-symbols-outlined" onClick={()=> setShow(true)}>shopping_cart 
+          <span class="material-symbols-outlined" onClick={()=> setShow(true)}>shopping_bag
           <h4>({totalUniqueItems})</h4>
           </span>
           {show ? <Cart/> :null}
