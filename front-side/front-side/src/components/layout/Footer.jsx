@@ -5,19 +5,18 @@ import './App.css';
 const Footer = () => {
   return (
     <footer className='footer'>
-     <div className='container-footer'>
-        <div className='row'>
-            <div className='footer-col'>
-                <h4>company</h4>
+        <div className='GridTable'>
+            <div className='footer-col1'>
+                <h3>company</h3>
                 <ul>
                     <li><a >about us</a></li>
-                    <li><a >our service</a></li>
+                    <li><a >our service</a></li>    
                     <li><a >privacy policy</a></li>
                     <li><a >affiliate program  </a></li>
                 </ul>
             </div>
-            <div className='footer-col'>
-                <h4>get help</h4>
+            <div className='footer-col2'>
+                <h3>get help</h3>
                 <ul>
                     <li><a >FAQ</a></li>
                     <li><a >shipping</a></li>
@@ -26,9 +25,9 @@ const Footer = () => {
                     <li><a >payment options</a></li>
                 </ul>
             </div>
-            <div className='footer-col'>
-                <h4>online shop</h4>
-                <ul>
+            <div className='footer-col3'>
+                <h3>online shop</h3>
+                <ul>    
                     <li><a >canapé</a></li>
                     <li><a >chaise</a></li>
                     <li><a >table</a></li>
@@ -36,8 +35,8 @@ const Footer = () => {
 
                 </ul>
             </div>
-            <div className='footer-coll'>
-                <h4 className='followus'>follow us</h4>
+            <div className='footer-row2'>
+                <h3>follow us</h3>
                 <div className='social-links'>
                     <a><i className='fab fa-facebook'></i></a> 
                     <a><i className='fab fa-twitter'></i></a>
@@ -45,9 +44,7 @@ const Footer = () => {
                     <a><i className='fab fa-linkedin'></i></a> 
                 </div>
             </div>
-
         </div>
-     </div>
     </footer>
   )
 }

@@ -9,11 +9,10 @@ import "../layout/App.css";
 import SignIn from "../popup/Signin/SignIn";
 import SignUp from "../popup/Singup/SignUp";
 import { useState, useEffect } from "react";
-import Cart from '.././shop/Cart'
+// import Cart from '.././shop/Cart'
 const Navbar = () => {
   const [logged, setLogged] = useState(false);
   const [client, setClient] = useState(null);
-  const [show, setShow] = useState(false)
   const [buttonPopup, setButtonPopup] = useState(false);
   const [buttonPopin, setButtonPopin] = useState(false);
   // const navigate = useNavigate();
@@ -113,10 +112,10 @@ const Navbar = () => {
           </button>
         </nav>
         <div className="basket">
-          <span class="material-symbols-outlined" onClick={()=> setShow(true)}>shopping_bag
+          <span class="material-symbols-outlined" >shopping_bag
           <h4>({totalUniqueItems})</h4>
           </span>
-          {show ? <Cart/> :null}
+          {/* {show ? <Cart/> :null} */}
           </div>
          <button onClick={showNavBar} className="nav-btn">
           <HiMenu />

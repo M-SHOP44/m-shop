@@ -9,6 +9,7 @@ import Footer from "../../layout/Footer.jsx";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     axios
@@ -23,7 +24,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home-container">
+      <button onClick={()=>{setShow(!show)}}>hide</button>
       <div>
         <Header />
       </div>
@@ -41,9 +43,13 @@ const Home = () => {
             );
           })}
         </div>
-        <div>
+        {
+          show ? 
+           <div>
           <Cart />
-        </div>
+        </div> : null
+        }
+       
       </div>
       <div>
         <Footer />
