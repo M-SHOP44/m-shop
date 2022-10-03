@@ -2,14 +2,28 @@ import { useRef } from "react";
 import { HiMenu } from "react-icons/hi";
 import { HiX } from "react-icons/hi";
 import { FcApproval } from "react-icons/fc";
+
 import { useCart } from "react-use-cart";
 // import { useNavigate } from "react-router-dom";
+
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useCart } from "react-use-cart";
+import { useNavigate } from "react-router-dom";
+
+
 import { Link } from "react-router-dom";
 import "../layout/App.css";
 import SignIn from "../popup/Signin/SignIn";
 import SignUp from "../popup/Singup/SignUp";
 import { useState, useEffect } from "react";
+
 // import Cart from '.././shop/Cart'
+
+
+
+
 const Navbar = () => {
   const [logged, setLogged] = useState(false);
   const [client, setClient] = useState(null);
@@ -23,6 +37,14 @@ const Navbar = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: search,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("client"))
     console.log(user);
@@ -31,9 +53,7 @@ const Navbar = () => {
       setLogged(true)
       console.log(user);
     }
-  },[]);
 
- 
   
   return (
     <>
@@ -41,6 +61,7 @@ const Navbar = () => {
         <Link to="/" id="myshop">
           M-shop
         </Link>
+
         <div>
           <FcApproval />
           <Link
@@ -52,6 +73,18 @@ const Navbar = () => {
             Sell at m-shop
           </Link>
         </div>
+
+        <div className='input'>
+        <input type="text" class="searchTerm" id="input_text" placeholder='Search...'></input>
+        <button type="submit" class="searchButton" >
+        <Lottie 
+	    options={defaultOptions}
+        height={30}
+        width={30}
+      />       
+        </button>
+      </div>
+
         <nav ref={navRef}>
           {logged ? 
           <div className="logout-container">
@@ -84,13 +117,29 @@ const Navbar = () => {
                 {" "}
               </SignIn>
             </div>
-          </div>
-}
+          </div>}
         </nav>
       </header>
+
+
       <header className="category-nav">
+
         <nav ref={navRef}>
           <div className="category">
+
+      <div>
+      <FcApproval />
+          <Link className="seller"
+            style={{ textDecoration: "none", fontSize:"20px"}}
+            to="/signup"
+           >
+            {" "}
+            Sell at m-shop
+          </Link>
+          </div>
+          
+        <nav className='navbar'>
+
           <a href="/#">canapé</a>
           <a href="/#">Chair</a>
           <a href="/#">Table</a>
@@ -99,6 +148,7 @@ const Navbar = () => {
           <a href="/#">Luminaire</a>
           <a href="/#">Tapis</a>
           <a href="/#">Lit</a>
+
           </div>
          
 
@@ -107,9 +157,20 @@ const Navbar = () => {
                navigate("/basket")}  */}
         
 
+          </nav>
+          {/* onClick={
+              () =>
+               navigate("/basket")}  */}
+
+          <a href="" id="basket">
+            {" "}
+            <AiOutlineShoppingCart size={"28px"} />({totalUniqueItems})
+          </a>
+
           <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <HiX />
           </button>
+
         </nav>
         <div className="basket">
           <span class="material-symbols-outlined" >shopping_bag
@@ -118,6 +179,11 @@ const Navbar = () => {
           {/* {show ? <Cart/> :null} */}
           </div>
          <button onClick={showNavBar} className="nav-btn">
+
+        {/* </nav> */}
+
+        <button onClick={showNavBar} className="nav-btn">
+
           <HiMenu />
         </button>
       </header>

@@ -10,10 +10,12 @@
 }
 
 
+
 .row{
-    padding: 10px 15px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 2fr 1fr;
     gap: 20px;
     position: relative;
     

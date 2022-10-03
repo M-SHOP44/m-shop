@@ -7,6 +7,8 @@ import Comptebancaire from "./Comptebancaire";
 import axios from "axios";
 import IP from "../../api/ip";
 import "../register/style.css";
+//import Lottie from "react-lottie";
+//import  shop  from "../../../images/lottie/shop.json"
 // import Popup from "./popup";
 // import { useState } from "react";
 
@@ -51,6 +53,15 @@ const Form = ( ) => {
     codeSwift: "",
   });
 
+
+//   const defaultOptions = {
+//     loop: true,
+//     autoplay: true,
+//     animationData: shop,
+//     rendererSettings: {
+//       preserveAspectRatio: "xMidYMid slice"
+//     }
+//   };
 
 
   const FormTitles = [
@@ -143,7 +154,18 @@ const Form = ( ) => {
             
           </footer>
         </div>
+// <<<<<<< sarah
       
+// =======
+//         <div id='icon'>
+//         <Lottie 
+// 	    options={defaultOptions}
+//         height={600}
+//         width={600}
+        
+//       /> 
+//       </div>
+// >>>>>>> main
       </div>
      
     </>
