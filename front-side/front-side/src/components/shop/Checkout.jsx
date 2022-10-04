@@ -37,11 +37,11 @@ const send = () =>{
         <div>
         <section id='section1'>
         <section>
-            <h3>Checkout</h3>
+            <h1>Checkout</h1>
             <div id='container'>
                
                     <div id='title'>
-                    <h3 >Delivery adresse </h3>
+                    <h2 >Delivery adresse </h2>
                     </div>
                     <div className='form'>
 
@@ -59,6 +59,7 @@ const send = () =>{
                             <label  className="label-delivery">Postcode</label>
                             <input className="form-control" placeholder='Type post code' value={formData.postcode} onChange={event => setFormData(event.target.value)}/>
                         </div>
+                    
                         <div>
                             <label  className="label-delivery">City</label>
                             <input className="form-control" placeholder='Type city name' value={formData.city} onChange={event => setFormData(event.target.value)}/>
@@ -67,12 +68,12 @@ const send = () =>{
                         <div>
                             <label  className="label-delivery">Add note (optional)</label>
                             <input className="form-control" placeholder="ei: Please don't ring the bell. Babe is sleeping. " value={formData.note} onChange={event => setFormData(event.target.value)}/>
-                            <div>160/160</div>
+                            <div id='text'>160/160</div>
                         </div>
                     </div>
                 <hr />
                 <form  >
-                    <h3>Personal Details</h3>
+                    <h2>Personal Details</h2>
                     <div className='form'>
                         <div>
                             <label  className="label-delivery">Username</label>
@@ -87,7 +88,7 @@ const send = () =>{
                             <input className="form-control" placeholder='Type phone number' value={formData.num} onChange={event => setFormData(event.target.value)}/>
                         </div>
                     </div>
-                    <div>When placing an order, you will receive a confirmation, Food Tracker status messages and a request to review the restaurant via email or otherwise (such as push messages).</div>
+                    <div id='text'>When placing an order, you will receive a confirmation, Food Tracker status messages and a request to review the restaurant via email or otherwise (such as push messages).</div>
                 </form>
                 
             </div>

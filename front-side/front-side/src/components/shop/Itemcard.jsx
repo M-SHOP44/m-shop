@@ -3,13 +3,13 @@ import {useCart} from "react-use-cart";
 import "./cart.css"
 const Itemcard = (props) => {
   props.product.id=props.product._id
-    const {addItem} = useCart();
+  const {addItem} = useCart();
 
 
   return (
     <div className='card-container'>    
         <div className='card-row'>
-            <img src={props.image} alt="" width={"100%"} />
+            <img src={props.image} alt="product" />
             <div className='card-body'>
                 <h5 className='card-title'>{props.title}</h5>
                 <h5 className='card-title'>{props.price}</h5>

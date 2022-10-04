@@ -7,10 +7,10 @@ import Comptebancaire from "./Comptebancaire";
 import axios from "axios";
 import IP from "../../api/ip";
 import "../register/style.css";
-import Lottie from "react-lottie";
-import  shop  from "../../../images/lottie/shop.json"
-// import Popup from "./popup";
-// import { useState } from "react";
+import { Link } from "react-router-dom";
+import "../../layout/App.css";
+
+
 
 
 const Form = ( ) => {
@@ -53,14 +53,6 @@ const Form = ( ) => {
     codeSwift: "",
   });
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: shop,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
-  };
 
   const FormTitles = [
     "Comptevendeur",
@@ -98,14 +90,17 @@ const Form = ( ) => {
  
   return (
     <>
-    
+    <header className="main-nav">
+    <Link to="/" id="myshop">
+          M-shop
+        </Link>
       <div className="flex">
-        
         <a type="button" href="/sellercenter" className="log" >
-          SELLER CENTER
+          ALREADY  REGISTERED 
         </a>
       </div>
-      <hr />
+    </header>
+      <h2 id="h3">Register Here</h2>
       <div id="form">
         <div id="form-container">
           <div id="header">
@@ -152,14 +147,7 @@ const Form = ( ) => {
             
           </footer>
         </div>
-        <div id='icon'>
-        <Lottie 
-	    options={defaultOptions}
-        height={600}
-        width={600}
-        
-      /> 
-      </div>
+      
       </div>
      
     </>

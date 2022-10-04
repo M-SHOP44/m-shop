@@ -39,7 +39,6 @@ const Footer = () => {
                 <h3>follow us</h3>
                 <div className='social-links'>
                     <a><i className='fab fa-facebook'></i></a> 
-                    <a><i className='fab fa-twitter'></i></a>
                     <a><i className='fab fa-instagram'></i></a>
                     <a><i className='fab fa-linkedin'></i></a> 
                 </div>
