@@ -41,12 +41,9 @@ const Cart = (props) => {
                   <>
                     <div className="balise" key={index}>
                       <div className="title-price">
-                      <div>
                        <h1>{product.quantity}</h1>
                        <h2>{product.title} </h2>
-                     </div>
-                      
-                      <h2>{product.price}</h2>
+                       <h2>{product.price}</h2>
                       </div>
                       <div className="x">
                       <button
