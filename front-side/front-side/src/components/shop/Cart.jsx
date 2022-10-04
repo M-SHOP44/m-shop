@@ -2,6 +2,7 @@ import React from "react";
 import { useCart } from "react-use-cart";
 import "./cart.css";
 import { useNavigate } from "react-router-dom";
+import { FiMinus, FiPlus} from "react-icons/fi";
 
 const Cart = (props) => {
   const navigate = useNavigate();
@@ -40,7 +41,11 @@ const Cart = (props) => {
                   <>
                     <div className="balise" key={index}>
                       <div className="title-price">
-                      <h2>{product.title} </h2>
+                      <div>
+                       <h1>{product.quantity}</h1>
+                       <h2>{product.title} </h2>
+                     </div>
+                      
                       <h2>{product.price}</h2>
                       </div>
                       <div className="x">
@@ -55,26 +60,24 @@ const Cart = (props) => {
                     <div className="button-cart">
                       <div>
                       <button
-                        
-                        onClick={() =>
-                          updateItemQuantity(product.id, product.quantity + 1)
-                        }
+                       className="plus-minus"
+                       onClick={() =>
+                        updateItemQuantity(product.id, product.quantity + 1)}
                       >
-                        <span class="material-symbols-outlined">add_circle</span>
+                        <FiPlus/>
                       </button>
                       </div>
-                      <div>
-                      <h3>{product.quantity}</h3>
-                      </div>
-                      
+                     
+                     
+            
                       <div>
                       <button
-                      
+                        className="plus-minus"
                         onClick={() =>
                           updateItemQuantity(product.id, product.quantity - 1)
                         }
                       >
-                        <span class="material-symbols-outlined">do_not_disturb_on</span>
+                        <FiMinus/>
                       </button>
                       </div>
                       

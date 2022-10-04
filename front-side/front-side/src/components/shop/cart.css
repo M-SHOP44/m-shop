@@ -53,10 +53,8 @@ margin-left: 2rem;
 }
 
 .title-price  {
+  display: inline-flex;
   
-  display: flex;
-  flex-direction: row;
-  gap: 8rem;
 }
   .bag{
     position: relative;
@@ -71,8 +69,8 @@ margin-left: 2rem;
  }
 
 .button-cart{
-  display: flex;
-  flex-direction: row;
+display: inline-flex;
+gap: 10px;
 }
 .fa .fa-plus-circle .plus .spaceplus{
 background-color: red;
@@ -118,6 +116,11 @@ gap: 50px;
   
 }
 
+.plus-minus{
+border-radius: 10px;
+font-size: 20px;
+background-color: transparent;
+}
 
 
 

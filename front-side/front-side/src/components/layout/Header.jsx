@@ -24,17 +24,15 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("client"))
+    const user = JSON.parse(localStorage.getItem("client"));
     console.log(user);
-    if(user){
-      setClient(user)
-      setLogged(true)
+    if (user) {
+      setClient(user);
+      setLogged(true);
       console.log(user);
     }
-  },[]);
+  }, []);
 
- 
-  
   return (
     <>
       <header className="main-nav">
@@ -48,76 +46,84 @@ const Navbar = () => {
             to="/signup"
             className="seller"
           >
-
             Sell at m-shop
           </Link>
         </div>
         <nav ref={navRef}>
-          {logged ? 
-          <div className="logout-container">
-            <h1 className="username">{client.username}</h1> 
-            <button   className="button-user" onClick={()=> {localStorage.removeItem("client");setClient(null); setLogged(false)}}>log out</button>
-            </div> : 
+          {logged ? (
+            <div className="logout-container">
+              <h1 className="username">{client.username}</h1>
+              <button
+                className="button-user"
+                onClick={() => {
+                  localStorage.removeItem("client");
+                  setClient(null);
+                  setLogged(false);
+                }}
+              >
+                log out
+              </button>
+            </div>
+          ) : (
             <div className="buttons">
-            <div> 
-              <button
-                type="button"
-                className="button-user"
-                onClick={() => setButtonPopup(true)}
-              >
-                Sign up
-              </button>
-              <SignUp trigger={buttonPopup} setTrigger={setButtonPopup}>
-                {" "}
-              </SignUp>
+              <div>
+                <button
+                  type="button"
+                  className="button-user"
+                  onClick={() => setButtonPopup(true)}
+                >
+                  Sign up
+                </button>
+                <SignUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+                  {" "}
+                </SignUp>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  className="button-user"
+                  id="log"
+                  onClick={() => setButtonPopin(true)}
+                >
+                  Login
+                </button>
+                <SignIn trigger={buttonPopin} setTrigger={setButtonPopin}>
+                  {" "}
+                </SignIn>
+              </div>
             </div>
-            <div>
-              <button
-                type="button"
-                className="button-user"
-                id="log"
-                onClick={() => setButtonPopin(true)}
-              >
-                Login
-              </button>
-              <SignIn trigger={buttonPopin} setTrigger={setButtonPopin}>
-                {" "}
-              </SignIn>
-            </div>
-          </div>
-}
+          )}
         </nav>
       </header>
       <header className="category-nav">
         <nav ref={navRef}>
           <div className="category">
-          <a href="/#">canapé</a>
-          <a href="/#">Chair</a>
-          <a href="/#">Table</a>
-          <a href="/#">Bureau</a>
-          <a href="/#">Rangement</a>
-          <a href="/#">Luminaire</a>
-          <a href="/#">Tapis</a>
-          <a href="/#">Lit</a>
+            <a href="/#">canapé</a>
+            <a href="/#">Chair</a>
+            <a href="/#">Table</a>
+            <a href="/#">Bureau</a>
+            <a href="/#">Rangement</a>
+            <a href="/#">Luminaire</a>
+            <a href="/#">Tapis</a>
+            <a href="/#">Lit</a>
           </div>
-         
 
           {/* onClick={
               () =>
                navigate("/basket")}  */}
-        
 
           <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <HiX />
           </button>
         </nav>
         <div className="basket">
-          <span class="material-symbols-outlined" >shopping_bag
-          <h4>({totalUniqueItems})</h4>
+          <span class="material-symbols-outlined">
+            shopping_bag
+            <h4>({totalUniqueItems})</h4>
           </span>
           {/* {show ? <Cart/> :null} */}
-          </div>
-         <button onClick={showNavBar} className="nav-btn">
+        </div>
+        <button onClick={showNavBar} className="nav-btn">
           <HiMenu />
         </button>
       </header>
