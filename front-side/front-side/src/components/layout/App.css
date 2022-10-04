@@ -17,10 +17,11 @@
     --secondaryColor: #DB2B39;
     --textColor:#eee 
 }
-html{
-    height: 100%;
-    
-}
+    /* html{
+        height: 100%;
+        
+        
+    } */
 body{
     height: 100%;
     width: 100%;   
@@ -30,7 +31,6 @@ body{
 footer {
     margin: 0;
     padding: 0;
-    max-height: fit-content;
 }
 
 header{
@@ -187,14 +187,14 @@ header .nav-btn{
 /* FOOTER */
 .footer{
     background-color: #24262b;
-    
+    padding: 0;
 
 }
 .GridTable{
     display: grid;
     grid-template-columns: 1fr, repeat(4, 3fr);
     grid-template-rows: 3fr, 1fr;
-    
+    padding: 0;
 }
 
 

@@ -2,6 +2,7 @@ import React from "react";
 import { useCart } from "react-use-cart";
 import "./cart.css";
 import { useNavigate } from "react-router-dom";
+import { FiMinus, FiPlus} from "react-icons/fi";
 
 const Cart = (props) => {
   const navigate = useNavigate();
@@ -40,8 +41,17 @@ const Cart = (props) => {
                   <>
                     <div className="balise" key={index}>
                       <div className="title-price">
+<<<<<<< HEAD
                       <h2>{product.title} </h2>
                       <h2>{product.price} TND</h2>
+=======
+                      <div>
+                       <h1>{product.quantity}</h1>
+                       <h2>{product.title} </h2>
+                     </div>
+                      
+                      <h2>{product.price}</h2>
+>>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
                       </div>
                       <div className="x">
                       <button id="circle"
@@ -55,11 +65,11 @@ const Cart = (props) => {
                     <div className="button-cart">
                       <div>
                       <button
-                        
-                        onClick={() =>
-                          updateItemQuantity(product.id, product.quantity + 1)
-                        }
+                       className="plus-minus"
+                       onClick={() =>
+                        updateItemQuantity(product.id, product.quantity + 1)}
                       >
+<<<<<<< HEAD
                         <span id="circle" class="fa fa-plus-circle"></span>
                       </button>
                       </div>
@@ -67,14 +77,26 @@ const Cart = (props) => {
                       <h3 id="circle-1" > ({product.quantity})</h3>
                       </div>
                       
+=======
+                        <FiPlus/>
+                      </button>
+                      </div>
+                     
+                     
+            
+>>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
                       <div>
                       <button
-                      
+                        className="plus-minus"
                         onClick={() =>
                           updateItemQuantity(product.id, product.quantity - 1)
                         }
                       >
+<<<<<<< HEAD
                         <span id="circle" class="fa fa-minus-circle" width={20}></span>
+=======
+                        <FiMinus/>
+>>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
                       </button>
                       </div>
                       
