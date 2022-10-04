@@ -27,6 +27,8 @@ app.use("/product", productRouter);
 app.use("/admin", adminRouter);
 app.use("/order", orderRouter);
 app.use("client", clientRouter);
+app.use(express.static("public"))
+
 
 app.get("/", (req, res) => {
   res.send("hello world");

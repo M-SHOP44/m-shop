@@ -42,6 +42,7 @@ const Cart = (props) => {
                     <div className="balise" key={index}>
                       <div className="title-price">
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <h2>{product.title} </h2>
                       <h2>{product.price} TND</h2>
 =======
@@ -52,6 +53,11 @@ const Cart = (props) => {
                       
                       <h2>{product.price}</h2>
 >>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
+=======
+                       <h1>{product.quantity}</h1>
+                       <h2>{product.title} </h2>
+                       <h2>{product.price}</h2>
+>>>>>>> 4ff970b2ead43fcedc2161fca5baacac06887153
                       </div>
                       <div className="x">
                       <button id="circle"
