@@ -5,6 +5,7 @@ import IP from '../../api/ip';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../../layout/App.css";
+import { BsFillPersonFill,BsLockFill } from "react-icons/bs";
 
 
 
@@ -36,12 +37,13 @@ const send = () => {
           M-shop
         </Link>
      </header>
-    <div className='login-container'>
-      <div className='form-cont'>
-      <div>
-      <label htmlFor="email">Password</label>
+     <main>
+     <div className='shoplogin-container'>
+      <div className='form-shop'>
+      <div className='input-shop'>
+      <label htmlFor="email"><BsFillPersonFill className='icon'/></label>
       <input       
-      className='input-login'
+       className='shop-login'
        type="email" 
        placeholder='Enter your Password' 
        value={formData.email}
@@ -49,10 +51,10 @@ const send = () => {
         setFormData({...formData, email: event.target.value})
       }} />
     </div>
-    <div>
-      <label htmlFor="password">Email</label>
+    <div className='input-shop'>
+      <label htmlFor="password"><BsLockFill className='icon'/></label>
       <input 
-      className='input-login'
+      className='shop-login'
       type="password" 
       placeholder='Enter your Email'
       value={formData.password}
@@ -62,12 +64,19 @@ const send = () => {
       />
     </div>
       </div>
-     
+   
     <div id='forget-password'>
-      <a href="#/" id='pwd'>Forget Password?</a>
-      <button id='connecter' onClick={send}>Connect</button>
+      <div className='forget'>
+      <a href="#/" >Forget Password?</a>
+      </div>
+      <div>
+      <button id='connecter' onClick={send}>Log in</button>
+      </div>
+     
     </div>
     </div>
+     </main>
+    
    
     </>
   )

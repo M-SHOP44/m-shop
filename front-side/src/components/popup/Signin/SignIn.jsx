@@ -2,6 +2,7 @@ import axios from 'axios';
 import React,{useState} from 'react'
 import './SignIn.css'
 import IP from '../../api/ip'
+import { MdCancel } from "react-icons/md";
 
 function SignIn(props) {
     const [checked, setChecked] = React.useState(false);
@@ -26,19 +27,22 @@ function SignIn(props) {
     <div className='main'>
       <div className='popup-container'>
       <form>
-        <div className='header'>
-        <p className='title'>Sign In</p>
-        <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button>
+        <div className='header-in'>
+        <p >Sign In</p>
+        {/* <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button> */}
+        <span className='close-btn' onClick={() => props.setTrigger(false)}><MdCancel/></span>
         </div>
-        <hr/>
-      <div>
-      <label className='Email'>Email address</label>
-      <input className='Emailin' type="email" placeholder='Enter email' value={formData.email} onChange={event => {setFormData({...formData, email:event.target.value})}}/>
+       <div className='in-container'>
+       <div className='in-input'>
+      <label >Email address</label>
+      <input  type="email" placeholder='Enter email' value={formData.email} onChange={event => {setFormData({...formData, email:event.target.value})}}/>
       </div>
-      <div>
-      <label className='Pwd'>Password</label>
-      <input className='Pwdin' type="password" placeholder='Enter Password' value={formData.password} onChange={event => {setFormData({...formData, password:event.target.value})}}/>
+      <div className='in-input'>
+      <label >Password</label>
+      <input  type="password" placeholder='Enter Password' value={formData.password} onChange={event => {setFormData({...formData, password:event.target.value})}}/>
       </div>
+       </div>
+    
     
       <div>
       <button  className='signup-btn' onClick={send}>Submit</button>

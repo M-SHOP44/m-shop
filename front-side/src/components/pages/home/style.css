@@ -1,4 +1,26 @@
-<<<<<<< HEAD
+html, body {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    display: block;
+}
+
+body {     
+    font: 13px/22px Helvetica, Arial, sans-serif;  
+    background: #f0f0f0;  
+
+} 
+
+
+
+
+
+
+
+
+
+
 .grid-container{
     /* background-color: red; */
     /* border-style: dashed; */
@@ -18,27 +40,6 @@
     grid-template-rows: 2fr 1fr;
     gap: 20px;
     position: relative;
-=======
-    .grid-container{
-        /* background-color: red; */
-        /* border-style: dashed; */
-        display: grid;
-        grid-template-columns: 70% 30%;
-        gap: 29px;
-        margin: 0 auto;
-        height: 100%;
-        width: 100%;
-    }
-
-
-    .row{
-        padding: 10px 15px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr ;
-        gap: 20px;
-        position: relative;
-        
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
     
     }
 
@@ -60,15 +61,7 @@
         font-size: 16px;
     }
 
-    /* .title{
-        color: black;
-    } */
 
-    img{
-        border-bottom: solid;
-        color: gray;
-        
-    }
 
     /* SIDE-BAR */
 

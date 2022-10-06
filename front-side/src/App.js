@@ -11,7 +11,6 @@ import {CartProvider}  from "react-use-cart"
 import Checkout from "./components/shop/Checkout";
 import Cart from "./components/shop/Cart";
 
-
 const App = ()=>{
 
   const [products, setProducts] = useState([])
@@ -29,6 +28,7 @@ const App = ()=>{
         <Route path="/DashboardShopowner"  element={<Shopowner/>}  />
         <Route path="/checkout"  element={<Checkout products={products} />}  />
         <Route path="/basket"  element={<Cart  setProducts={setProducts}/>}  />
+        
 
 
 

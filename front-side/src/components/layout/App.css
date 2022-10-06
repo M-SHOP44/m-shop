@@ -173,7 +173,7 @@ header .nav-btn{
 }
 .basket span {
     position: relative;
-    left: 15rem;
+    left: 10rem;
     font-size: 35px;
     color: #24262b;
     cursor: pointer;
@@ -188,6 +188,7 @@ header .nav-btn{
 .footer{
     background-color: #24262b;
     padding: 0;
+    width: 100%;
 
 }
 .GridTable{

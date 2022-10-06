@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-// import '../Login/style.css';
+import './admin.css';
 import IP from '../api/ip';
 import { useNavigate } from "react-router-dom";
+import { BsFillPersonFill,BsLockFill } from "react-icons/bs";
 
 
 
@@ -34,17 +35,20 @@ const send = () => {
 
   return (
     <>
-    <div className='form-container'>
-       <div>
-      <label htmlFor="username">username</label>
+    <div className='adminlogin-container'>
+       <div className='form-admin'>
+        <div className='input-admin'>
+        <label htmlFor="username"><BsFillPersonFill className='icon'/></label>
       <input type="username" placeholder='Username' value={formData.username}
+      className="admin-login"
       onChange={(event)=>{
         setFormData({...formData, username: event.target.value})
       }} />
-    </div>
-    <div>
-      <label htmlFor="password">Password</label>
+        </div>
+        <div className='input-admin'>
+      <label htmlFor="password"><BsLockFill className='icon'/></label>
       <input 
+      className="admin-login"
       type="password" 
       placeholder='Password'
       value={formData.password}
@@ -53,12 +57,16 @@ const send = () => {
       }}
       />
     </div>
-    <div id='forget-password'>
+    </div>
+ <div className='footer-logadmin'>
+ <div className='forget'>
       <a href="#/">Forget Password?</a>
     </div>
-    <div>
-      <button id='connecter' onClick={send} >SE CONNECTER</button>
+    <div >
+      <button className='log' onClick={send} >SE CONNECTER</button>
     </div>
+ </div>
+    
     </div>
    
     </>

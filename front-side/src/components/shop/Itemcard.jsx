@@ -9,10 +9,10 @@ const Itemcard = (props) => {
   return (
     <div className='card-container'>    
         <div className='card-row'>
-            <img src={props.image} alt="product" />
+            <img src={"http://localhost:3636/"+props.image[0]} alt="product" />
             <div className='card-body'>
                 <h5 className='card-title'>{props.title}</h5>
-                <h5 className='card-title'>{props.price}</h5>
+                <h5 className='card-title'>{props.price} TND</h5>
                 <p className='card-text'>{props.description}</p>
                 <button className='btn-success' onClick={() => addItem(props.product)}>Add to Cart</button>
             </div>

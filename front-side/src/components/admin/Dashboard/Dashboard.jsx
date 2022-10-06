@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import "@fontsource/material-icons-sharp";
-import "../style.css";
+import "../admin.css";
 import image from '../../../images/image.jpeg'
 const Dashboard = () => {
   const [logged, setLogged] = useState(false);

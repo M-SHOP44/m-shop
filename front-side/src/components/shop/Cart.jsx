@@ -41,23 +41,11 @@ const Cart = (props) => {
                   <>
                     <div className="balise" key={index}>
                       <div className="title-price">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      <h2>{product.title} </h2>
-                      <h2>{product.price} TND</h2>
-=======
-                      <div>
+
                        <h1>{product.quantity}</h1>
                        <h2>{product.title} </h2>
-                     </div>
-                      
-                      <h2>{product.price}</h2>
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
-=======
-                       <h1>{product.quantity}</h1>
-                       <h2>{product.title} </h2>
-                       <h2>{product.price}</h2>
->>>>>>> 4ff970b2ead43fcedc2161fca5baacac06887153
+                       <h2>{product.price}TND</h2>
+
                       </div>
                       <div className="x">
                       <button id="circle"
@@ -75,22 +63,12 @@ const Cart = (props) => {
                        onClick={() =>
                         updateItemQuantity(product.id, product.quantity + 1)}
                       >
-<<<<<<< HEAD
-                        <span id="circle" class="fa fa-plus-circle"></span>
-                      </button>
-                      </div>
-                      <div>
-                      <h3 id="circle-1" > ({product.quantity})</h3>
-                      </div>
-                      
-=======
                         <FiPlus/>
                       </button>
                       </div>
                      
                      
             
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
                       <div>
                       <button
                         className="plus-minus"
@@ -98,11 +76,7 @@ const Cart = (props) => {
                           updateItemQuantity(product.id, product.quantity - 1)
                         }
                       >
-<<<<<<< HEAD
-                        <span id="circle" class="fa fa-minus-circle" width={20}></span>
-=======
                         <FiMinus/>
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
                       </button>
                       </div>
                       
