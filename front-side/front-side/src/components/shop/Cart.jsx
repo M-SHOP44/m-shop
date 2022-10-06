@@ -34,77 +34,46 @@ const Cart = (props) => {
   return (
     <section>
       <div className="container">
-          <table>
-            <tbody>
+      <table>
+      <div className="shop-cart">
+      <h1 id="h2">Shopping Cart</h1>
+      </div>
+            <tbody id="tbody">
               {items.map((product, index) => {
                 return (
                   <>
                     <div className="balise" key={index}>
                       <div className="title-price">
-<<<<<<< HEAD
-<<<<<<< HEAD
+                      <h2 id="qte">{product.quantity}</h2>
                       <h2>{product.title} </h2>
-                      <h2>{product.price} TND</h2>
-=======
-                      <div>
-                       <h1>{product.quantity}</h1>
-                       <h2>{product.title} </h2>
-                     </div>
-                      
-                      <h2>{product.price}</h2>
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
-=======
-                       <h1>{product.quantity}</h1>
-                       <h2>{product.title} </h2>
-                       <h2>{product.price}</h2>
->>>>>>> 4ff970b2ead43fcedc2161fca5baacac06887153
+                      <h2 id="price">{product.price} TND</h2>
                       </div>
-                      <div className="x">
-                      <button id="circle"
-                        onClick={() => removeItem(product.id)}
-                      >
-                        X
-                      </button>
-                      </div>
-                      
-                    </div>
-                    <div className="button-cart">
-                      <div>
+                    <div className="plusminus">
                       <button
                        className="plus-minus"
                        onClick={() =>
                         updateItemQuantity(product.id, product.quantity + 1)}
                       >
-<<<<<<< HEAD
-                        <span id="circle" class="fa fa-plus-circle"></span>
-                      </button>
-                      </div>
-                      <div>
-                      <h3 id="circle-1" > ({product.quantity})</h3>
-                      </div>
-                      
-=======
                         <FiPlus/>
                       </button>
-                      </div>
-                     
-                     
-            
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
-                      <div>
                       <button
                         className="plus-minus"
                         onClick={() =>
                           updateItemQuantity(product.id, product.quantity - 1)
                         }
                       >
-<<<<<<< HEAD
-                        <span id="circle" class="fa fa-minus-circle" width={20}></span>
-=======
                         <FiMinus/>
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
                       </button>
-                      </div>
+                      </div>  
+                  </div>
+                    
+                       
+                    
+                      
+                      
+                    <div className="button-cart">
+ 
+                      
                       
                     </div>
 
@@ -114,6 +83,7 @@ const Cart = (props) => {
               })}
             </tbody>
           </table>
+          
       
         <div>
           <h2 className="price"> Total price: {cartTotal} TND</h2>

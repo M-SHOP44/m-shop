@@ -42,20 +42,9 @@ const Navbar = () => {
           M-shop
         </Link>
         <div>
-<<<<<<< HEAD
         <input  type="text" class="searchTerm" id="input_text" placeholder='Search...'></input>
         <button type="submit" class="searchButton" >   
         </button>
-=======
-          <FcApproval />
-          <Link
-            style={{ textDecoration: "none" }}
-            to="/signup"
-            className="seller"
-          >
-            Sell at m-shop
-          </Link>
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
         </div>
         
         <nav ref={navRef}>
@@ -101,11 +90,7 @@ const Navbar = () => {
                 </SignIn>
               </div>
             </div>
-<<<<<<< HEAD
-          </div>}
-=======
           )}
->>>>>>> 9d4a70426a027e07ae44633463552733fb1b5ddd
         </nav>
       </header>
 
