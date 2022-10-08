@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const ProductController = require("../controller/productController");
 const { verifyAccessToken } = require("../jwt_helpers.js");
+const upload = require('../storage')
 
-router.post("/create", ProductController.postProduct);
+router.post("/create", upload.single('image') , ProductController.postProduct);
 router.delete("/:id", ProductController.delet);
 router.put("/:id", ProductController.update);
 router.get("/", ProductController.get);

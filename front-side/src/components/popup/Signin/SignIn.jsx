@@ -25,8 +25,8 @@ function SignIn(props) {
   return (props.trigger) ? (
     <>
     <div className='main'>
-      <div className='popup-container'>
-      <form>
+      <form >
+ <div className='popup-container'>
         <div className='header-in'>
         <p >Sign In</p>
         {/* <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button> */}
@@ -47,8 +47,10 @@ function SignIn(props) {
       <div>
       <button  className='signup-btn' onClick={send}>Submit</button>
       </div>
-      </form>
+      
       </div>
+      </form>
+     
       
       </div>
     

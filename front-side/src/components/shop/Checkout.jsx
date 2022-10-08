@@ -4,6 +4,7 @@ import Footer from '../layout/Footer';
 import './checkout.css';
 import axios from 'axios';
 import IP from '../api/ip';
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
 
@@ -31,15 +32,16 @@ const send = () =>{
 
   return (
     <div>
-        <div>
-            <Header/>
-        </div>
+    <header className="main-nav">
+        <Link to="/" id="myshop">
+          M-shop
+        </Link>
+    </header>
         <div>
         <section id='section1'>
         <section>
             <h1>Checkout</h1>
             <div id='container'>
-               
                     <div id='title'>
                     <h2 >Delivery adresse </h2>
                     </div>

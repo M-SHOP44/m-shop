@@ -23,8 +23,6 @@ const Navbar = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
 
-  
-
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("client"));
     console.log(user);
@@ -41,12 +39,12 @@ const Navbar = () => {
         <Link to="/" id="myshop">
           M-shop
         </Link>
-        <div>
-        <input  type="text" class="searchTerm" id="input_text" placeholder='Search...'></input>
-        <button type="submit" class="searchButton" >   
-        </button>
-        </div>
-        
+        <form role="search" id="search">
+      <input type="search" id="query" name="q"
+   placeholder="Search..."
+   aria-label="Search through site content"/>
+</form>
+
         <nav ref={navRef}>
           {logged ? (
             <div className="logout-container">
@@ -94,18 +92,18 @@ const Navbar = () => {
         </nav>
       </header>
 
-
       <header className="category-nav">
-      <div >
-      <FcApproval />
-          <Link className="seller"
-            style={{ textDecoration: "none", fontSize:"20px"}}
+        <div>
+          <FcApproval />
+          <Link
+            className="seller"
+            style={{ textDecoration: "none", fontSize: "20px" }}
             to="/signup"
-           >
+          >
             {" "}
             Sell at m-shop
           </Link>
-          </div>
+        </div>
         <nav ref={navRef}>
           <div className="category">
             <a href="/#">canapé</a>

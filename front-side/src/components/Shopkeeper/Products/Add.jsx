@@ -1,6 +1,25 @@
-import React from 'react'
-import "../Products/styleP.css"
-const addProduct = () => {
+import React,{useState} from 'react';
+import "../Products/styleP.css";
+import axios from 'axios';
+import IP from "../../api/ip"
+
+const AddProduct = () => {
+
+const [formData, setFormData] = useState({
+  category:"",
+  title:"",
+  description:"",
+  image:"",
+  price:""
+})
+
+
+  const add = () =>{
+    axios.post(`${IP}/product/create`,formData)
+    .then((response) => {
+      console.log(response.data);
+    })
+  }
   return (
     <div className="addproduct-container">
       <div className='header-addproduct'>
@@ -10,25 +29,25 @@ const addProduct = () => {
         <div className='form-product'>
          <div >
           <label >Category</label>
-          <input type="text" placeholder='Canapé...' required/>
+          <input type="text" placeholder='Canapé...' value={formData.category} onChange={event => {setFormData({...formData, category:event.target.value})}} required/>
          </div>
          <div >
           <label >Title</label>
-          <input type="text" placeholder='Canapé convertible...' required/>
+          <input type="text" placeholder='Canapé convertible...' value={formData.title} onChange={event => {setFormData({...formData, title:event.target.value})}} required/>
          </div>
          <div >
           <label >description</label>
-          <input type="text" placeholder='describe your product ...' id='description' />
+          <input type="text" placeholder='describe your product ...' value={formData.description} onChange={event => {setFormData({...formData, description:event.target.value})}} id='description' />
          </div>
          <div >
           <label >Price</label>
-          <input type="number" placeholder='100' required/>
+          <input type="number" placeholder='100' value={formData.price} onChange={event => {setFormData({...formData, price:event.target.value})}} required/>
          </div>
          <div >
           <button type='button' className='button-select'>choose your Image</button>
          </div>
          <div>
-         <button type='button' className='button-37'>ADD</button>
+         <button type='button' className='button-37' onClick={add}>ADD</button>
          </div>
         </div>
       </main>
@@ -36,4 +55,4 @@ const addProduct = () => {
   )
 }
 
-export default addProduct
+export default AddProduct

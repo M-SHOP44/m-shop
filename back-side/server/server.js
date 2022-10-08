@@ -9,7 +9,7 @@ const orderRouter = require("./router/orderRouter.js");
 const clientRouter = require("./router/clientRouter.js");
 const authAdminRout = require("./auth/admin/adminAuthRouter/router.js");
 const authShopOwnerRout = require("./auth/shopOwner/shopOwnerAuthRouter/router.js");
-const authClientRout = require("./auth/client/clientAuthRouter/router.js")
+const authClientRout = require("./auth/client/clientAuthRouter/router.js");
 const PORT = process.env.PORT || 3636;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

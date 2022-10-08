@@ -34,30 +34,21 @@ const Cart = (props) => {
   return (
     <section>
       <div className="container">
-          <table>
-            <tbody>
+      <table>
+      <div className="shop-cart">
+      <h1 id="h2">Shopping Cart</h1>
+      </div>
+            <tbody id="tbody">
               {items.map((product, index) => {
                 return (
                   <>
                     <div className="balise" key={index}>
                       <div className="title-price">
-
-                       <h1>{product.quantity}</h1>
-                       <h2>{product.title} </h2>
-                       <h2>{product.price}TND</h2>
-
+                      <h2 id="qte">{product.quantity}</h2>
+                      <h2>{product.title} </h2>
+                      <h2 id="price">{product.price} TND</h2>
                       </div>
-                      <div className="x">
-                      <button id="circle"
-                        onClick={() => removeItem(product.id)}
-                      >
-                        X
-                      </button>
-                      </div>
-                      
-                    </div>
-                    <div className="button-cart">
-                      <div>
+                    <div className="plusminus">
                       <button
                        className="plus-minus"
                        onClick={() =>
@@ -65,11 +56,6 @@ const Cart = (props) => {
                       >
                         <FiPlus/>
                       </button>
-                      </div>
-                     
-                     
-            
-                      <div>
                       <button
                         className="plus-minus"
                         onClick={() =>
@@ -78,7 +64,16 @@ const Cart = (props) => {
                       >
                         <FiMinus/>
                       </button>
-                      </div>
+                      </div>  
+                  </div>
+                    
+                       
+                    
+                      
+                      
+                    <div className="button-cart">
+ 
+                      
                       
                     </div>
 
@@ -88,13 +83,14 @@ const Cart = (props) => {
               })}
             </tbody>
           </table>
+          
       
         <div>
           <h2 className="price"> Total price: {cartTotal} TND</h2>
         </div>
         
         <div>
-          <h3 className="delivery">*Delivery cost: 5 TND*</h3>
+          <h3 className="delivery">Delivery cost: 5 TND</h3>
         </div>
         <div className="button-container">
           <button className="clear" onClick={() => emptyCart()}>

@@ -2,7 +2,8 @@ const ProductService = require("../service/productService.js");
 
 module.exports = {
   async postProduct(req, res, next) {
-    try {
+    try { 
+      req.body.image = req.file.filename	
       var Product = await ProductService.addToProduct(req.body);
       res.send(Product);
     } catch (next) {
