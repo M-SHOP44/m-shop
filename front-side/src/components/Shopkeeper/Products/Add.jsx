@@ -15,7 +15,12 @@ const [formData, setFormData] = useState({
 
 
   const add = () =>{
-    axios.post(`${IP}/product/create`,formData)
+    const form=new FormData()
+    Object.keys(formData).map((key)=>{
+      form.append(key,formData[key])
+    })
+    axios.post(`${IP}/product/create`,form)
+    
     .then((response) => {
       console.log(response.data);
     })
@@ -44,7 +49,8 @@ const [formData, setFormData] = useState({
           <input type="number" placeholder='100' value={formData.price} onChange={event => {setFormData({...formData, price:event.target.value})}} required/>
          </div>
          <div >
-          <button type='button' className='button-select'>choose your Image</button>
+          <input type='file'  onChange={event => {console.log(event.target.files[0]);
+            setFormData({...formData, image:event.target.files[0]})}}/>
          </div>
          <div>
          <button type='button' className='button-37' onClick={add}>ADD</button>

@@ -7,7 +7,7 @@ module.exports = {
       var Product = await ProductService.addToProduct(req.body);
       res.send(Product);
     } catch (next) {
-      res.status(401).json(next);
+      res.status(400).json(next);
     }
   },
 
