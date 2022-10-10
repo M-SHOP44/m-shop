@@ -1,17 +1,20 @@
-import React,{useState, useRef} from 'react';
+import React,{useState} from 'react';
 import "../Products/styleP.css";
 import axios from 'axios';
 import IP from "../../api/ip"
-import {BsFillCameraFill} from 'react-icons/bs'
-import Snackbar from "./snackbar";
+import Snackbar from '@mui/material/Snackbar';
 
-const SnackbarType = {
-  success: "success",
-  fail: "fail",
-};
+// import Snackbar from "./snackbar";
+
+// const SnackbarType = {
+//   success: "success",
+//   fail: "fail",
+// };
+
+
 
 const AddProduct = () => {
-  const snackbarRef = useRef(null);
+  // const snackbarRef = useRef(null);
 
 const [formData, setFormData] = useState({
   category:"",
@@ -20,14 +23,21 @@ const [formData, setFormData] = useState({
   image:"",
   price:""
 })
+const [open, setOpen] = React.useState(false);
 
 
-  const add = () =>{
-    axios.post(`${IP}/product/create`,formData)
-    .then((response) => {
-      console.log(response.data);
-    })
-  }
+
+const add = () =>{
+  const form=new FormData()
+  Object.keys(formData).map((key)=>{
+    form.append(key,formData[key])
+  })
+  axios.post(`${IP}/product/create`,form)
+  .then((response) => {
+    console.log(response.data);
+    setOpen(true)
+  })
+}
   return (
     
     <div className="addproduct-container">
@@ -53,24 +63,32 @@ const [formData, setFormData] = useState({
           <input id='inputt' type="number" placeholder='100' value={formData.price} onChange={event => {setFormData({...formData, price:event.target.value})}} required/>
          </div>
          <div>
-          <button type='button' className='button-select'><BsFillCameraFill  id='camera'/>Choose your Image</button>
+          <input type='file' id='camera'  onChange={event => {setFormData({...formData, image:event.target.files[0]})}} required />
          </div>
          <div>
-         <button type='button' className='button-37' onClick={() => {
-          snackbarRef.current.show();
-        }}
+         <button type='button' className='button-37' onClick={add}
         >ADD
          </button>
-         <Snackbar
+         {/* <Snackbar
         ref={snackbarRef}
         message="This is a success message!!"
         type={SnackbarType.success}
-      />
+      /> */}
          </div>
+         {/* <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        message="Product added !"
+      /> */}
         </div>
      
     </div>
   )
 }
 
-export default AddProduct
+export default AddProduct;
+
+
+// onClick={() => {
+//   snackbarRef.current.show();
+// }}
